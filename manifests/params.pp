@@ -1,5 +1,8 @@
 class ldirectord::params {
 
+  $autoupdate        = false
+  $broadcastclient   = false
+  $config    = '/etc/ldirectord.cf'
   $package_ensure    = 'present'
   $default_package_name = ['ldirectord']
   $default_service_name = 'ldirectord'
