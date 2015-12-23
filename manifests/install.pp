@@ -1,9 +1,9 @@
-class ldirectord::install inherits ldirectord {
+class ldirectord_start::install inherits ldirectord_start {
 
   #if $ntp::package_manage {
 
-    package { $ldirectord::package_name:
-      ensure => $ldirectord::package_ensure,
+    package { $ldirectord_start::package_name:
+      ensure => $ldirectord_start::package_ensure,
     }
 
   #}
