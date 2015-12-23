@@ -1,5 +1,4 @@
-class ldirectord::params {
-
+class ldirectord_start::params {
   $autoupdate        = false
   $broadcastclient   = false
   $config    = '/etc/ldirectord.cf'
