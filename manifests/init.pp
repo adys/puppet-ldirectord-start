@@ -1,5 +1,8 @@
-class ldirectord {
-  inherits ldirectord::params {
+class ldirectord (
+  $autoupdate        = $ldirectord::params::autoupdate,
+  $broadcastclient   = $ldirectord::params::broadcastclient,
+  $config            = $ldirectord::params::config,
+) inherits ldirectord::params {
 
   # Anchor this as per #8040 - this ensures that classes won't float off and
   # mess everything up.  You can read about this at:
@@ -9,7 +12,5 @@ class ldirectord {
   #class { '::ldirectord::config': } ~>
   #class { '::ldirectord::service': } ->
   anchor { 'ldirectord::end': }
-
 }
 
-}
