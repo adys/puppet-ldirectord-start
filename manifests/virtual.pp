@@ -6,13 +6,14 @@ define ldirectord_start::virtual(
 ) {
   notify{"LDIRECTORD PROFILE ${title} ${$title}": } 
 
-  #if ! defined(Class['ldirectord_start']) {
-  #  include ldirectord_start
-  #}
+  # The base class must be included first because it is used by parameter defaults
+  if ! defined(Class['ldirectord_start']) {
+    fail('You must include the ldirectord_start base class before using any ldirectord defined resources')
+  }
   
-  concat::fragment { 'test':
+  concat::fragment { $title:
     target  => $ldirectord_start::config,
     content => template('ldirectord_start/ldirectord_start.virtual.cf.erb'),
-    order   => 'test',
+    order   => $title,
   }
 }
