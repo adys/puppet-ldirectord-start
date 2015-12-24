@@ -1,6 +1,6 @@
-class ldirectord::config inherits ldirectord {
+class ldirectord_start::config inherits ldirectord_start {
 
-  concat { $ldirectord::config:
+  concat { $ldirectord_start::config:
     ensure => present,
     owner  => 'root',
     group  => 'root',
