@@ -4,9 +4,10 @@ define ldirectord_start::virtual(
   $netmask = undef,
   $persistent = undef,
 ) {
-  concat::fragment { $title:
+  notify{"LDIRECTORD PROFILE ${title} ${$title}": } 
+  concat::fragment { 'test':
     target  => $ldirectord_start::configfile,
     content => template('ldirectord_start/ldirectord_start.virtual.cf.erb'),
-    order   => $title,
+    order   => 'test',
   }
 }
