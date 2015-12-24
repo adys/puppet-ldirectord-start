@@ -12,7 +12,7 @@ class ldirectord_start (
   anchor { 'ldirectord_start::begin': } ->
   class { '::ldirectord_start::install': } ->
   class { '::ldirectord_start::config': } ->
-  class { '::ldirectord_start::virtual': } ->
+  Ldirectord::virtual <| |> ->
   #class { '::ldirectord_start::config': } ~>
   #class { '::ldirectord_start::service': } ->
   anchor { 'ldirectord_start::end': }

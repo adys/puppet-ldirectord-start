@@ -1,4 +1,4 @@
-class ldirectord_start::virtual(
+define ldirectord_start::virtual(
   $receive = undef,
   $checktype = undef,
   $netmask = undef,
