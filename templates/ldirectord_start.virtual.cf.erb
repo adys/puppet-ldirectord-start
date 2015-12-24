@@ -1,4 +1,22 @@
-virtual=TEST
 
 virtual=<%= @firewall_mark %>
+<% @real.each do |ip| -%>
+    real=<%= ip %>
+<% end -%>
 
+#real = dmz1-dmz masq 1000
+#real = dmz2-dmz masq 1000
+#	checktype = connect
+#	checkport = 80
+#	scheduler = rr
+#	persistent = 3600
+#	netmask = 255.255.255.0
+#	monitorfile = /tmp/ldirector_monitor
+#
+#
+#name         => "servicename-80",
+#   virtual      => "192.168.xx.xx",
+#   real         => [ "192.168.xx.xx", "192.168.xx.xx" ],
+#   real_options => "gate",
+#   port         => '80',
+#   service      => 'http',
