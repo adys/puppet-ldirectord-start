@@ -1,14 +1,19 @@
 class ldirectord_start::params {
-  $autoupdate        = false
-  $broadcastclient   = false
-  $config    = '/etc/ldirectord.cf'
-  $package_ensure    = 'present'
-  $default_package_name = ['ldirectord']
-  $default_service_name = 'ldirectord'
+  $autoupdate            = false
+  $broadcastclient       = false
+  $package_ensure        = 'present'
+
+  $default_config        = '/etc/ldirectord.cf'
+  $default_package_name  = ['ldirectord']
+  $default_service_name  = 'ldirectord'
+  $default_logfile       = '/var/log/ldirectord.log'
 
   case $::osfamily {
     'Debian': {
-      $package_name    = $default_package_name
+      $config           = $default_config
+      $package_name     = $default_package_name
+      $service_name     = $default_service_name
+      $logfile          = $default_logfile
     }
     default: {
       fail("The ${module_name} module is not supported on an ${::osfamily} based system.")

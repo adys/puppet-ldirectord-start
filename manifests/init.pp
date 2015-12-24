@@ -9,6 +9,7 @@ class ldirectord_start (
   # http://docs.puppetlabs.com/puppet/2.7/reference/lang_containment.html#known-issues
   anchor { 'ldirectord_start::begin': } ->
   class { '::ldirectord_start::install': } ->
+  class { '::ldirectord_start::config': } ->
   #class { '::ldirectord_start::config': } ~>
   #class { '::ldirectord_start::service': } ->
   anchor { 'ldirectord_start::end': }
