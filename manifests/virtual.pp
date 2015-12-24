@@ -7,6 +7,6 @@ define ldirectord_start::virtual(
   concat::fragment { $title:
     target  => $ldirectord_start::configfile,
     content => template('ldirectord_start/ldirectord_start.virtual.cf.erb'),
-    order   => $name,
+    order   => $title,
   }
 }
