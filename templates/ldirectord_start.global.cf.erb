@@ -1,1 +1,15 @@
 #Managed by puppet using ldirectord module.
+
+# Global options for all Virtual sections
+
+checktimeout=<%= @checktimeout %>
+negotiatetimeout=<%= @negotiatetimeout %>
+checkinterval=<%= @checkinterval %>
+failurecount=<%= @failurecount %>
+quiescent=<%= @quiescent %>
+autoreload=<%= @autoreload %>
+logfile="<%= @logfile %>"
+<% if @callback -%>
+callback=<%= @callback %>
+<% end -%>
+

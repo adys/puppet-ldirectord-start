@@ -2,6 +2,8 @@ class ldirectord_start (
   $autoupdate        = $ldirectord_start::params::autoupdate,
   $broadcastclient   = $ldirectord_start::params::broadcastclient,
   $config            = $ldirectord_start::params::config,
+
+
 ) inherits ldirectord_start::params {
 
   # Anchor this as per #8040 - this ensures that classes won't float off and
