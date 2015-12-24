@@ -4,11 +4,10 @@ class ldirectord_start::params {
   $negotiatetimeout      = 30
   $checkinterval         = 10
   $failurecount          = 1
-  #fallback = ip_address|hostname[:portnumber|sercvicename] [gate | masq | ipip]
+  #$fallback             = ip_address|hostname[:portnumber|sercvicename] [gate | masq | ipip]
   $quiescent             = yes
   $autoreload            = no 
   $callback              = undef
-
 
   $default_config        = '/etc/ldirectord.cf'
   $default_package_name  = ['ldirectord']
