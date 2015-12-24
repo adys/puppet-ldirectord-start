@@ -9,6 +9,8 @@ class ldirectord_start::params {
   $autoreload            = no 
   $callback              = undef
 
+  #$firewall-mark         = undef
+
   $default_config        = '/etc/ldirectord.cf'
   $default_package_name  = ['ldirectord']
   $default_service_name  = 'ldirectord'

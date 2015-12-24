@@ -1,4 +1,5 @@
 define ldirectord_start::virtual(
+  $firewall-mark,
   $receive = undef,
   $checktype = undef,
   $netmask = undef,

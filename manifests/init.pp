@@ -2,7 +2,7 @@ class ldirectord_start (
   $autoupdate        = $ldirectord_start::params::autoupdate,
   $broadcastclient   = $ldirectord_start::params::broadcastclient,
   $config            = $ldirectord_start::params::config,
-
+  #$firewall-mark     = $ldirectord_start::params::firewall-mark,
 
 ) inherits ldirectord_start::params {
 
