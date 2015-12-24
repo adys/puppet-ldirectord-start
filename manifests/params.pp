@@ -1,13 +1,15 @@
 class ldirectord_start::params {
   $package_ensure        = 'present'
-  $checktimeout          = 5
-  $negotiatetimeout      = 30
-  $checkinterval         = 10
-  $failurecount          = 1
+  $checktimeout          = '5'
+  $negotiatetimeout      = '30'
+  $checkinterval         = '10'
+  $failurecount          = '1'
   #$fallback             = ip_address|hostname[:portnumber|sercvicename] [gate | masq | ipip]
-  $quiescent             = yes
-  $autoreload            = no 
+  $quiescent             = 'yes'
+  $autoreload            = 'no' 
   $callback              = undef
+  $checktype             = 'negotiate'
+  $scheduler             = 'rr'
 
   #$firewall-mark         = undef
 

@@ -3,6 +3,7 @@ define ldirectord_start::virtual(
   $real,
   $receive = undef,
   $checktype = undef,
+  $checkport = undef,
   $netmask = undef,
   $persistent = undef,
 ) {
