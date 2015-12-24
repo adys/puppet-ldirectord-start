@@ -4,8 +4,6 @@ define ldirectord_start::virtual(
   $netmask = undef,
   $persistent = undef,
 ) {
-  notify{"LDIRECTORD PROFILE ${title} ${$title}": } 
-
   # The base class must be included first because it is used by parameter defaults
   if ! defined(Class['ldirectord_start']) {
     fail('You must include the ldirectord_start base class before using any ldirectord defined resources')
