@@ -1,6 +1,6 @@
 virtual=<%= @firewall_mark %>
-<% @real.each do |real| -%>
-    real=<%= real['server'] real['options'] %>
+<% @real.each do |real_var| -%>
+    real=<%= real_var['server'] real_var['options'] %>
 <% end -%>
 <% if @checktype -%>
     checktype=<%= @checktype %>
