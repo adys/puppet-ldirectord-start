@@ -19,7 +19,7 @@ class ldirectord_start (
   $callback                       = undef,
   $fallback                       = undef,
   $fallbackcommand                = undef,
-  $logfile                        = '/var/log/ldirectord.log.',
+  $logfile                        = '/var/log/ldirectord.log',
   $emailalert                     = undef,
   $emailalertfrom                 = undef,
   $emailalertfreq                 = '0',
