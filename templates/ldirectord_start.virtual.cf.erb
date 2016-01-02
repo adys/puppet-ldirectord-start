@@ -2,10 +2,94 @@ virtual=<%= @virtual %>
 <% @real.each do |real_var| -%>
     real=<%= real_var['server'] %> <%= real_var['options'] %> 
 <% end -%>
+<% if @checktimeout -%>
+    checktimeout=<%= @checktimeout %>
+<% end -%>
+<% if @negotiatetimeout -%>
+    negotiatetimeout=<%= @negotiatetimeout %>
+<% end -%>
+<% if @checkinterval -%>
+    checkinterval=<%= @checkinterval %>
+<% end -%>
+<% if @checkcount -%>
+    checkcount=<%= @checkcount %>
+<% end -%>
+<% if @failurecount -%>
+    failurecount=<%= @failurecount %>
+<% end -%>
+<% if @fallback -%>
+    fallback=<%= @fallback %>
+<% end -%>
+<% if @fallbackcommand -%>
+    fallbackcommand=<%= @fallbackcommand %>
+<% end -%>
+<% if @emailalert -%>
+    emailalert=<%= @emailalert %>
+<% end -%>
+<% if @emailalertfreq -%>
+    emailalertfreq=<%= @emailalertfreq %>
+<% end -%>
+<% if @emailalertstatus -%>
+    emailalertstatus=<%= @emailalertstatus %>
+<% end -%>
+<% if @smtp -%>
+    smtp=<%= @smtp %>
+<% end -%>
+<% if @quiescent -%>
+    quiescent=<%= @quiescent %>
+<% end -%>
+<% if @cleanstop -%>
+    cleanstop=<%= @cleanstop %>
+<% end -%>
+<% if @maintenancedir -%>
+    maintenancedir=<%= @maintenancedir %>
+<% end -%>
 <% if @checktype -%>
     checktype=<%= @checktype %>
 <% end -%>
+<% if @service -%>
+    service=<%= @service %>
+<% end -%>
+<% if @checkcommand -%>
+    checkcommand=<%= @checkcommand %>
+<% end -%>
 <% if @checkport -%>
     checkport=<%= @checkport %>
+<% end -%>
+<% if @request -%>
+    request=<%= @request %>
+<% end -%>
+<% if @receive -%>
+    receive=<%= @receive %>
+<% end -%>
+<% if @httpmethod -%>
+    httpmethod=<%= @httpmethod %>
+<% end -%>
+<% if @virtualhost -%>
+    virtualhost=<%= @virtualhost %>
+<% end -%>
+<% if @login-%>
+    login=<%= @login %>
+<% end -%>
+<% if @passwd-%>
+    passwd=<%= @passwd %>
+<% end -%>
+<% if @database-%>
+    database=<%= @database %>
+<% end -%>
+<% if @scheduler-%>
+    scheduler=<%= @scheduler %>
+<% end -%>
+<% if @persistent-%>
+    persistent=<%= @persistent %>
+<% end -%>
+<% if @netmask -%>
+    netmask=<%= @netmask %>
+<% end -%>
+<% if @protocol -%>
+    protocol=<%= @protocol %>
+<% end -%>
+<% if @monitorfile -%>
+    monitorfile=<%= @monitorfile %>
 <% end -%>
 

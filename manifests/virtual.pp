@@ -1,42 +1,40 @@
 define ldirectord_start::virtual(
-  
+ 
+  ### START Required Arguments
   $virtual,
   $real,
-  $checktimeout = undef,
-  $negotiatetimeout = undef,
-  $checkinterval = undef,
-  $checkcount = undef,
-  $failurecount = undef,
-  #autoreload
-  #callback
-  $fallback = undef,
-  $fallbackcommand = undef,
-  #logfile
-  $emailalert = undef,
-  #emailalertfrom
-  $emailalertfreq = undef,
-  $emailalertstatus = undef,
-  $smtp = undef,
-  #fork
-  $quiescent = undef,
-  $cleanstop = undef,
-  $maintenancedir = undef,
-  $checktype = undef,
-  $service = undef,
-  $checkcommand = undef,
-  $checkport = undef,
-  $request = undef,
-  $receive = undef,
-  $httpmethod = undef,
-  $virtualhost = undef,
-  $login = undef,
-  $passwd = undef,
-  $database = undef,
-  $scheduler = undef,
-  $persistent = undef,
-  $netmask = undef,
-  $protocol = undef,
-  $monitorfile = undef,
+  ### END Required Arguments
+
+  $checktimeout            = $::ldirectord_start::checktimeout
+  $negotiatetimeout        = $::ldirectord_start::negotiatetimeout
+  $checkinterval           = $::ldirectord_start::checkinterval
+  $checkcount              = $::ldirectord_start::checkcount
+  $failurecount            = $::ldirectord_start::failurecount
+  $fallback                = $::ldirectord_start::fallback
+  $fallbackcommand         = $::ldirectord_start::fallbackcommand
+  $emailalert              = $::ldirectord_start::emailalert
+  $emailalertfreq          = $::ldirectord_start::emailalertfreq
+  $emailalertstatus        = $::ldirectord_start::emailalertstatus
+  $smtp                    = $::ldirectord_start::smtp
+  $quiescent               = $::ldirectord_start::quiescent
+  $cleanstop               = $::ldirectord_start::cleanstop
+  $maintenancedir          = $::ldirectord_start::maintenancedir
+  $checktype               = $::ldirectord_start::checktype
+  $service                 = $::ldirectord_start::service
+  $checkcommand            = $::ldirectord_start::checkcommand
+  $checkport               = $::ldirectord_start::checkport
+  $request                 = $::ldirectord_start::request
+  $receive                 = $::ldirectord_start::receive
+  $httpmethod              = $::ldirectord_start::httpmethod
+  $virtualhost             = $::ldirectord_start::virtualhost
+  $login                   = $::ldirectord_start::login
+  $passwd                  = $::ldirectord_start::passwd
+  $database                = $::ldirectord_start::database
+  $scheduler               = $::ldirectord_start::scheduler
+  $persistent              = $::ldirectord_start::persistent
+  $netmask                 = $::ldirectord_start::netmask
+  $protocol                = $::ldirectord_start::protocol
+  $monitorfile             = $::ldirectord_start::monitorfile
 ) {
 
   ### The base class must be included first because it is used by parameter defaults ###
@@ -44,7 +42,7 @@ define ldirectord_start::virtual(
     fail('You must include the ldirectord_start base class before using any ldirectord defined resources')
   }
   
-  ### Validations ###
+  ### STARTValidations ###
   validate_string($virtual)
   validate_string($real)
   if (!is_integer($checktimeout)) {
@@ -62,27 +60,15 @@ define ldirectord_start::virtual(
   if (!is_integer($failurecount)) {
     fail('$failurecount must be an integer.')
   }
-
-  #autoreload
-  #callback
-
   validate_string($fallback)
   validate_string($fallbackcommand)
   validate_string($emailalert)
- 
-  #emailalertfrom
-
-  #logfile
-  
   validate_string($emailalert)
   if (!is_integer($emailalertfreq)) {
     fail('$emailalertfreq must be an integer.')
   }
   validate_string($emailalertstatus)
   validate_string($smtp)
-
-  #fork
- 
   if ($quiescent != 'yes') or ($quiescent = 'no') {
     fail('$quiescent must have value "yes" or "no".')
   } 
@@ -116,10 +102,10 @@ define ldirectord_start::virtual(
     fail('Only tcp, udp and fwm protocol are supported.')
   }
   validate_string($monitorfile)
-  ### End validations ###
+  ### END Validations ###
 
   concat::fragment { $title:
-    target  => $ldirectord_start::config,
+    target  => $::ldirectord_start::config,
     content => template('ldirectord_start/ldirectord_start.virtual.cf.erb'),
     order   => $title,
   }
