@@ -3,19 +3,19 @@ class ldirectord_start::config {
   ### START Validations ###
   validate_string($virtual)
   validate_string($real)
-  if (!is_integer($checktimeout)) {
+  if (($checktimeout != undef) and (!is_integer($checktimeout))) {
     fail('$checktimeout must be an integer.')
   }
-  if (!is_integer($negotiatetimeout)) {
+  if (($negotiatetimeout != undef) and (!is_integer($negotiatetimeout))) {
     fail('$negotiatetimeout must be an integer.')
   }
-  if (!is_integer($checkinterval)) {
+  if (($checkinterval != undef) and (!is_integer($checkinterval))) {
     fail('$checkinterval must be an integer.')
   }
-  if (!is_integer($checkcount)) {
+  if (($checkcount != undef) and (!is_integer($checkcount))) {
     fail('$checkcount must be an integer.')
   }
-  if (!is_integer($failurecount)) {
+  if (($failurecount != undef) and (!is_integer($failurecount))) {
     fail('$failurecount must be an integer.')
   }
 
@@ -39,10 +39,10 @@ class ldirectord_start::config {
 
   #fork
 
-  if ($quiescent != 'yes') or ($quiescent = 'no') {
+  if ($quiescent != 'yes') or ($quiescent == 'no') {
     fail('$quiescent must have value "yes" or "no".')
   }
-  if ($cleanstop != 'yes') or ($cleanstop = 'no') {
+  if ($cleanstop != 'yes') or ($cleanstop == 'no') {
     fail('$cleanstop must have value "yes" or "no".')
   }
   if ($maintenancedir != undef) {
@@ -56,7 +56,7 @@ class ldirectord_start::config {
   }
   validate_string($request)
   validate_string($receive)
-  if ($httpmethod != 'GET') or ($httpmethod = 'HEAD') {
+  if ($httpmethod != 'GET') or ($httpmethod == 'HEAD') {
     fail('$httpmethod must have value "GET" or "HEAD".')
   }
   validate_string($virtualhost)
@@ -68,7 +68,7 @@ class ldirectord_start::config {
     fail('$persistent must be an integer.')
   }
   validate_string($netmask)
-  if ($protocol != 'tcp') or ($protocol = 'udp') or ($protocol = 'fwm') {
+  if ($protocol != 'tcp') or ($protocol == 'udp') or ($protocol == 'fwm') {
     fail('Only tcp, udp and fwm protocol are supported.')
   }
   validate_string($monitorfile)
