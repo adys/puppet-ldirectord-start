@@ -1,40 +1,40 @@
 class ldirectord_start::config {
 
-  $checktimeout                   = $::ldirectord_start::checktimeout
-  $negotiatetimeout               = $::ldirectord_start::negotiatetimeout
-  $checkinterval                  = $::ldirectord_start::checkinterval
-  $checkcount                     = $::ldirectord_start::checkcount
-  $failurecount                   = $::ldirectord_start::failurecount
-  $autoreload                     = $::ldirectord_start::autoreload
-  $callback                       = $::ldirectord_start::callback
-  $fallback                       = $::ldirectord_start::fallback
-  $fallbackcommand                = $::ldirectord_start::fallbackcommand
-  $logfile                        = $::ldirectord_start::logfile
-  $emailalert                     = $::ldirectord_start::emailalert
-  $emailalertfrom                 = $::ldirectord_start::emailalertfrom
-  $emailalertfreq                 = $::ldirectord_start::emailalertfreq
-  $emailalertstatus               = $::ldirectord_start::emailalertstatus
-  $smtp                           = $::ldirectord_start::smtp
-  $fork                           = $::ldirectord_start::fork
-  $quiescent                      = $::ldirectord_start::quiescent
-  $cleanstop                      = $::ldirectord_start::cleanstop
-  $maintenancedir                 = $::ldirectord_start::maintenancedir
-  $checktype                      = $::ldirectord_start::checktype
-  $service                        = $::ldirectord_start::service
-  $checkcommand                   = $::ldirectord_start::checkcommand
-  $checkport                      = $::ldirectord_start::checkport
-  $request                        = $::ldirectord_start::request
-  $receive                        = $::ldirectord_start::receive
-  $httpmethod                     = $::ldirectord_start::httpmethod
-  $virtualhost                    = $::ldirectord_start::virtualhost
-  $login                          = $::ldirectord_start::login
-  $passwd                         = $::ldirectord_start::passwd
-  $database                       = $::ldirectord_start::database
-  $scheduler                      = $::ldirectord_start::scheduler
-  $persistent                     = $::ldirectord_start::persistent
-  $netmask                        = $::ldirectord_start::netmask
-  $protocol                       = $::ldirectord_start::protocol
-  $monitorfile                    = $::ldirectord_start::monitorfile
+  $checktimeout            = $::ldirectord_start::checktimeout
+  $negotiatetimeout        = $::ldirectord_start::negotiatetimeout
+  $checkinterval           = $::ldirectord_start::checkinterval
+  $checkcount              = $::ldirectord_start::checkcount
+  $failurecount            = $::ldirectord_start::failurecount
+  $autoreload              = $::ldirectord_start::autoreload
+  $callback                = $::ldirectord_start::callback
+  $fallback                = $::ldirectord_start::fallback
+  $fallbackcommand         = $::ldirectord_start::fallbackcommand
+  $logfile                 = $::ldirectord_start::logfile
+  $emailalert              = $::ldirectord_start::emailalert
+  $emailalertfrom          = $::ldirectord_start::emailalertfrom
+  $emailalertfreq          = $::ldirectord_start::emailalertfreq
+  $emailalertstatus        = $::ldirectord_start::emailalertstatus
+  $smtp                    = $::ldirectord_start::smtp
+  $fork                    = $::ldirectord_start::fork
+  $quiescent               = $::ldirectord_start::quiescent
+  $cleanstop               = $::ldirectord_start::cleanstop
+  $maintenancedir          = $::ldirectord_start::maintenancedir
+  $checktype               = $::ldirectord_start::checktype
+  $service                 = $::ldirectord_start::service
+  $checkcommand            = $::ldirectord_start::checkcommand
+  $checkport               = $::ldirectord_start::checkport
+  $request                 = $::ldirectord_start::request
+  $receive                 = $::ldirectord_start::receive
+  $httpmethod              = $::ldirectord_start::httpmethod
+  $virtualhost             = $::ldirectord_start::virtualhost
+  $login                   = $::ldirectord_start::login
+  $passwd                  = $::ldirectord_start::passwd
+  $database                = $::ldirectord_start::database
+  $scheduler               = $::ldirectord_start::scheduler
+  $persistent              = $::ldirectord_start::persistent
+  $netmask                 = $::ldirectord_start::netmask
+  $protocol                = $::ldirectord_start::protocol
+  $monitorfile             = $::ldirectord_start::monitorfile
 
   ### START Validations ###
   validate_string($virtual)
@@ -54,27 +54,24 @@ class ldirectord_start::config {
   if (($failurecount != undef) and (!is_integer($failurecount))) {
     fail('$failurecount must be an integer.')
   }
-
-  #autoreload
-  #callback
-
+  if ($autoreload != 'yes') and ($autoreload != 'no') {
+    fail('$autoreload must have value "yes" or "no".')
+  }
+  validate_string($callback)
   validate_string($fallback)
   validate_string($fallbackcommand)
   validate_string($emailalert)
-
-  #emailalertfrom
-
-  #logfile
-
+  validate_string($emailalertfrom)
+  validate_string($logfile)
   validate_string($emailalert)
   if (($emailalertfreq != undef) and (!is_integer($emailalertfreq))) {
     fail('$emailalertfreq must be an integer.')
   }
   validate_string($emailalertstatus)
   validate_string($smtp)
-
-  #fork
-
+  if ($fork != 'yes') and ($fork != 'no') {
+    fail('$fork must have value "yes" or "no".')
+  }
   if ($quiescent != 'yes') and ($quiescent != 'no') {
     fail('$quiescent must have value "yes" or "no".')
   }
@@ -110,7 +107,7 @@ class ldirectord_start::config {
   validate_string($monitorfile)
   ### END Validations ###
 
-  ### START Create Config ###
+  ### START Create Configuration with Global Options ###
   concat { $::ldirectord_start::config:
     ensure => present,
     owner  => 'root',
@@ -123,6 +120,6 @@ class ldirectord_start::config {
     content => template('ldirectord_start/ldirectord_start.global.cf.erb'),
     order   => '00',
   }
-  ### END Create Config ###
+  ### END Create Configuration with Global Options ###
 
 }
