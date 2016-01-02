@@ -1,6 +1,8 @@
-# ldirectord.cf: Managed by puppet
+########################################
+### ldirectord.cf: Managed by puppet ###
+########################################
 
-# Global options for all Virtual sections
+### Global options ###
 
 checktimeout=<%= @checktimeout %>
 negotiatetimeout=<%= @negotiatetimeout %>
@@ -13,5 +15,7 @@ logfile="<%= @logfile %>"
 callback=<%= @callback %>
 <% end -%>
 
-# Virtual sections below
+######################
+
+### Virtual sections below ###
 
