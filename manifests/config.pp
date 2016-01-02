@@ -1,5 +1,41 @@
 class ldirectord_start::config {
 
+  $checktimeout                   = $::ldirectord_start::checktimeout
+  $negotiatetimeout               = $::ldirectord_start::negotiatetimeout
+  $checkinterval                  = $::ldirectord_start::checkinterval
+  $checkcount                     = $::ldirectord_start::checkcount
+  $failurecount                   = $::ldirectord_start::failurecount
+  $autoreload                     = $::ldirectord_start::autoreload
+  $callback                       = $::ldirectord_start::callback
+  $fallback                       = $::ldirectord_start::fallback
+  $fallbackcommand                = $::ldirectord_start::fallbackcommand
+  $logfile                        = $::ldirectord_start::logfile
+  $emailalert                     = $::ldirectord_start::emailalert
+  $emailalertfrom                 = $::ldirectord_start::emailalertfrom
+  $emailalertfreq                 = $::ldirectord_start::emailalertfreq
+  $emailalertstatus               = $::ldirectord_start::emailalertstatus
+  $smtp                           = $::ldirectord_start::smtp
+  $fork                           = $::ldirectord_start::fork
+  $quiescent                      = $::ldirectord_start::quiescent
+  $cleanstop                      = $::ldirectord_start::cleanstop
+  $maintenancedir                 = $::ldirectord_start::maintenancedir
+  $checktype                      = $::ldirectord_start::checktype
+  $service                        = $::ldirectord_start::service
+  $checkcommand                   = $::ldirectord_start::checkcommand
+  $checkport                      = $::ldirectord_start::checkport
+  $request                        = $::ldirectord_start::request
+  $receive                        = $::ldirectord_start::receive
+  $httpmethod                     = $::ldirectord_start::httpmethod
+  $virtualhost                    = $::ldirectord_start::virtualhost
+  $login                          = $::ldirectord_start::login
+  $passwd                         = $::ldirectord_start::passwd
+  $database                       = $::ldirectord_start::database
+  $scheduler                      = $::ldirectord_start::scheduler
+  $persistent                     = $::ldirectord_start::persistent
+  $netmask                        = $::ldirectord_start::netmask
+  $protocol                       = $::ldirectord_start::protocol
+  $monitorfile                    = $::ldirectord_start::monitorfile
+
   ### START Validations ###
   validate_string($virtual)
   validate_string($real)
