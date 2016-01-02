@@ -104,7 +104,7 @@ class ldirectord_start::config {
     fail('$persistent must be an integer.')
   }
   validate_string($netmask)
-  if ($protocol != 'tcp') or ($protocol == 'udp') or ($protocol == 'fwm') {
+  if ($protocol != 'tcp') and ($protocol == 'udp') and ($protocol == 'fwm') {
     fail('Only tcp, udp and fwm protocol are supported.')
   }
   validate_string($monitorfile)
