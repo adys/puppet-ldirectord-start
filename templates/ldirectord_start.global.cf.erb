@@ -2,7 +2,9 @@
 ### ldirectord.cf: Managed by puppet ###
 ########################################
 
+######################
 ### Global options ###
+######################
 <% if @checktimeout -%>
 checktimeout=<%= @checktimeout %>
 <% end -%>
@@ -31,7 +33,7 @@ fallback=<%= @fallback %>
 fallbackcommand=<%= @fallbackcommand %>
 <% end -%>
 <% if @logfile -%>
-logfile=<%= @logfile %>
+logfile="<%= @logfile %>"
 <% end -%>
 <% if @emailalert -%>
 emailalert=<%= @emailalert %>
@@ -109,7 +111,6 @@ protocol=<%= @protocol %>
 monitorfile=<%= @monitorfile %>
 <% end -%>
 
-######################
-
+##############################
 ### Virtual sections below ###
-
+##############################
