@@ -44,7 +44,6 @@ define ldirectord_start::virtual(
   
   ### STARTValidations ###
   validate_string($virtual)
-  validate_string($real)
   if (($checktimeout != undef) and (!is_integer($checktimeout))) {
     fail('$checktimeout must be an integer.')
   }
