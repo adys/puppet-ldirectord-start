@@ -39,10 +39,10 @@ class ldirectord_start::config {
 
   #fork
 
-  if ($quiescent != 'yes') and ($quiescent == 'no') {
+  if ($quiescent != 'yes') and ($quiescent != 'no') {
     fail('$quiescent must have value "yes" or "no".')
   }
-  if ($cleanstop != 'yes') and ($cleanstop == 'no') {
+  if ($cleanstop != 'yes') and ($cleanstop != 'no') {
     fail('$cleanstop must have value "yes" or "no".')
   }
   if ($maintenancedir != undef) {
