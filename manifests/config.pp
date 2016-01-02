@@ -78,9 +78,6 @@ class ldirectord_start::config {
   if ($cleanstop != 'yes') and ($cleanstop != 'no') {
     fail('$cleanstop must have value "yes" or "no".')
   }
-  if ($maintenancedir != undef) {
-    fail('$maintenancedir is not valid in a virtual server section..')
-  }
   validate_string($checktype)
   validate_string($service)
   validate_string($checkcommand)
