@@ -31,7 +31,7 @@ class ldirectord_start::config {
   #logfile
 
   validate_string($emailalert)
-  if (!is_integer($emailalertfreq)) {
+  if (($emailalertfreq != undef) and (!is_integer($emailalertfreq))) {
     fail('$emailalertfreq must be an integer.')
   }
   validate_string($emailalertstatus)
@@ -51,7 +51,7 @@ class ldirectord_start::config {
   validate_string($checktype)
   validate_string($service)
   validate_string($checkcommand)
-  if (!is_integer($checkport)) {
+  if (($checkport != undef) and (!is_integer($checkport))) {
     fail('$checkport must be an integer.')
   }
   validate_string($request)
@@ -64,7 +64,7 @@ class ldirectord_start::config {
   validate_string($passwd)
   validate_string($database)
   validate_string($scheduler)
-  if (!is_integer($persistent)) {
+  if (($persistent != undef) and (!is_integer($persistent))) {
     fail('$persistent must be an integer.')
   }
   validate_string($netmask)
