@@ -26,7 +26,7 @@ class ldirectord_start (
   $emailalertstatus               = undef,
   $smtp                           = undef,
   $fork                           = undef,
-  $quiescent                      = undef,
+  $quiescent                      = 'yes',
   $cleanstop                      = undef,
   $maintenancedir                 = undef,
   $checktype                      = undef,
