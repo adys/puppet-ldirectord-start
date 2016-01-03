@@ -42,7 +42,7 @@ define ldirectord_start::virtual(
     fail('You must include the ldirectord_start base class before using any ldirectord defined resources')
   }
   
-  ### STARTValidations ###
+  ### START Validations ###
   validate_string($virtual)
   if (($checktimeout != undef) and (!is_integer($checktimeout))) {
     fail('$checktimeout must be an integer.')
