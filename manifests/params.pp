@@ -8,6 +8,8 @@ class ldirectord_start::params {
   $default_service_name          = 'ldirectord' 
   $default_service_restart       = '/etc/init.d/ldirectord restart'
 
+  validate_bool($default_service_enable)
+
   case $::osfamily {
     'Debian': {
       $config           = $default_config
