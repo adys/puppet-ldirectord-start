@@ -6,7 +6,6 @@ class ldirectord_start::params {
   $default_service_ensure        = 'running' 
   $default_service_enable        =  true 
   $default_service_name          = 'ldirectord' 
-  $default_service_restart       = '/etc/init.d/ldirectord restart'
 
   validate_bool($default_service_enable)
 
@@ -18,7 +17,6 @@ class ldirectord_start::params {
       $service_ensure   = $default_service_ensure
       $service_enable   = $default_service_enable
       $service_name     = $default_service_name
-      $service_restart  = $default_service_restart
     }
     default: {
       fail("The ${module_name} module is not supported on an ${::osfamily} based system.")

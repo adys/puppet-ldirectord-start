@@ -7,7 +7,6 @@ class ldirectord_start (
   $service_ensure                 = $::ldirectord_start::params::service_ensure,
   $service_enable                 = $::ldirectord_start::params::service_enable,
   $service_name                   = $::ldirectord_start::params::service_name,
-  $service_restart                = $::ldirectord_start::params::service_restart,
   ### END Package and Service Configuration ###
 
   ### START ldirectord Global Configuration ###
@@ -53,9 +52,8 @@ class ldirectord_start (
   # http://docs.puppetlabs.com/puppet/2.7/reference/lang_containment.html#known-issues
   anchor { 'ldirectord_start::begin': } ->
   class { '::ldirectord_start::install': } ->
-  class { '::ldirectord_start::config': } ->
-  #class { '::ldirectord_start::config': } ~>
-  #class { '::ldirectord_start::service': } ->
+  class { '::ldirectord_start::config': } ~>
+  class { '::ldirectord_start::service': } ->
   anchor { 'ldirectord_start::end': }
 
 }
