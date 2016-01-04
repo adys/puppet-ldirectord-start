@@ -8,7 +8,6 @@ class ldirectord_start::service (
     ensure     => $service_ensure,
     name       => $service_name,
     enable     => $service_enable,
-    flags      => $service_flags,
     hasstatus  => true,
     hasrestart => true,
   }
