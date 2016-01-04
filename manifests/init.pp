@@ -5,6 +5,7 @@ class ldirectord_start (
   $package_ensure                 = $::ldirectord_start::params::package_ensure,
   $package_name                   = $::ldirectord_start::params::package_name,
   $service_ensure                 = $::ldirectord_start::params::service_ensure,
+  $service_enable                 = $::ldirectord_start::params::service_enable,
   $service_name                   = $::ldirectord_start::params::service_name,
   $service_restart                = $::ldirectord_start::params::service_restart,
   ### END Package and Service Configuration ###
