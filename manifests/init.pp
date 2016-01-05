@@ -40,7 +40,6 @@ class ldirectord_start (
   $persistent                     = undef,
   $netmask                        = undef,
   $protocol                       = undef,
-  $monitorfile                    = undef,
   ### END ldirectord Global Configuration ###
 
 ) inherits ::ldirectord_start::params {

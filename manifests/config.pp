@@ -30,7 +30,6 @@ class ldirectord_start::config {
   $persistent              = $::ldirectord_start::persistent
   $netmask                 = $::ldirectord_start::netmask
   $protocol                = $::ldirectord_start::protocol
-  $monitorfile             = $::ldirectord_start::monitorfile
 
   ### START Validations ###
   validate_string($virtual)
@@ -89,7 +88,6 @@ class ldirectord_start::config {
   if ($protocol != 'tcp') and ($protocol == 'udp') and ($protocol == 'fwm') {
     fail('Only tcp, udp and fwm protocol are supported.')
   }
-  validate_string($monitorfile)
   ### END Validations ###
 
   ### START Create Configuration with Global Options ###
