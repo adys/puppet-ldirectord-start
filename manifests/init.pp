@@ -28,7 +28,6 @@ class ldirectord_start (
   $quiescent                      = 'yes',
   $cleanstop                      = 'yes',
   $maintenancedir                 = undef,
-  $checktype                      = 'negotiate',
   $service                        = undef,
   $checkcommand                   = undef,
   $checkport                      = undef,

@@ -18,7 +18,6 @@ class ldirectord_start::config {
   $quiescent               = $::ldirectord_start::quiescent
   $cleanstop               = $::ldirectord_start::cleanstop
   $maintenancedir          = $::ldirectord_start::maintenancedir
-  $checktype               = $::ldirectord_start::checktype
   $service                 = $::ldirectord_start::service
   $checkcommand            = $::ldirectord_start::checkcommand
   $checkport               = $::ldirectord_start::checkport
@@ -73,7 +72,6 @@ class ldirectord_start::config {
   if ($cleanstop != 'yes') and ($cleanstop != 'no') {
     fail('$cleanstop must have value "yes" or "no".')
   }
-  validate_string($checktype)
   validate_string($service)
   validate_string($checkcommand)
   if (($checkport != undef) and (!is_integer($checkport))) {
