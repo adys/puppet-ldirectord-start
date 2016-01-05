@@ -29,7 +29,6 @@ class ldirectord_start::config {
   $login                   = $::ldirectord_start::login
   $passwd                  = $::ldirectord_start::passwd
   $database                = $::ldirectord_start::database
-  $scheduler               = $::ldirectord_start::scheduler
   $persistent              = $::ldirectord_start::persistent
   $netmask                 = $::ldirectord_start::netmask
   $protocol                = $::ldirectord_start::protocol
@@ -89,7 +88,6 @@ class ldirectord_start::config {
   validate_string($login)
   validate_string($passwd)
   validate_string($database)
-  validate_string($scheduler)
   if (($persistent != undef) and (!is_integer($persistent))) {
     fail('$persistent must be an integer.')
   }

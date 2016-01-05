@@ -39,7 +39,6 @@ class ldirectord_start (
   $login                          = undef,
   $passwd                         = undef,
   $database                       = undef,
-  $scheduler                      = 'wrr',
   $persistent                     = undef,
   $netmask                        = undef,
   $protocol                       = undef,
