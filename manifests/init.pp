@@ -33,7 +33,6 @@ class ldirectord_start (
   $checkport                      = undef,
   $request                        = undef,
   $receive                        = undef,
-  $httpmethod                     = 'GET',
   $virtualhost                    = undef,
   $login                          = undef,
   $passwd                         = undef,

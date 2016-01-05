@@ -23,7 +23,6 @@ class ldirectord_start::config {
   $checkport               = $::ldirectord_start::checkport
   $request                 = $::ldirectord_start::request
   $receive                 = $::ldirectord_start::receive
-  $httpmethod              = $::ldirectord_start::httpmethod
   $virtualhost             = $::ldirectord_start::virtualhost
   $login                   = $::ldirectord_start::login
   $passwd                  = $::ldirectord_start::passwd
@@ -79,9 +78,6 @@ class ldirectord_start::config {
   }
   validate_string($request)
   validate_string($receive)
-  if ($httpmethod != 'GET') or ($httpmethod == 'HEAD') {
-    fail('$httpmethod must have value "GET" or "HEAD".')
-  }
   validate_string($virtualhost)
   validate_string($login)
   validate_string($passwd)
