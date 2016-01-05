@@ -3,7 +3,6 @@ class ldirectord_start::config {
   $checktimeout            = $::ldirectord_start::checktimeout
   $negotiatetimeout        = $::ldirectord_start::negotiatetimeout
   $checkinterval           = $::ldirectord_start::checkinterval
-  $checkcount              = $::ldirectord_start::checkcount
   $failurecount            = $::ldirectord_start::failurecount
   $autoreload              = $::ldirectord_start::autoreload
   $callback                = $::ldirectord_start::callback
@@ -47,9 +46,6 @@ class ldirectord_start::config {
   }
   if (($checkinterval != undef) and (!is_integer($checkinterval))) {
     fail('$checkinterval must be an integer.')
-  }
-  if (($checkcount != undef) and (!is_integer($checkcount))) {
-    fail('$checkcount must be an integer.')
   }
   if (($failurecount != undef) and (!is_integer($failurecount))) {
     fail('$failurecount must be an integer.')

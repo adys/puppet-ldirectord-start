@@ -8,7 +8,6 @@ define ldirectord_start::virtual(
   $checktimeout         = undef,
   $negotiatetimeout     = undef,
   $checkinterval        = undef,
-  $checkcount           = undef,
   $failurecount         = undef,
   $fallback             = undef,
   $fallbackcommand      = undef,
@@ -52,9 +51,6 @@ define ldirectord_start::virtual(
   }
   if (($checkinterval != undef ) and (!is_integer($checkinterval))) {
     fail('$checkinterval must be an integer.')
-  }
-  if (($checkcount != undef ) and (!is_integer($checkcount))) {
-    fail('$checkcount must be an integer.')
   }
   if (($failurecount != undef ) and (!is_integer($failurecount))) {
     fail('$failurecount must be an integer.')

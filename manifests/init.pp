@@ -13,7 +13,6 @@ class ldirectord_start (
   $checktimeout                   = '5',
   $negotiatetimeout               = '30',
   $checkinterval                  = '10',
-  $checkcount                     = '1',
   $failurecount                   = '1',
   $autoreload                     = 'no',
   $callback                       = undef,
