@@ -100,7 +100,8 @@ class ldirectord_start::config {
 
   concat::fragment { 'global_opts':
     target  => $::ldirectord_start::config,
-    content => template('ldirectord_start/ldirectord_start.global.cf.erb'),
+    content => template("${module_name}/ldirectord_start.global.cf.erb"),
+    #content => template('ldirectord_start/ldirectord_start.global.cf.erb'),
     order   => '00',
   }
   ### END Create Configuration with Global Options ###
