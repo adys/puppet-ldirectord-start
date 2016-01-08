@@ -6,7 +6,7 @@
 ### Global options ###
 ######################
 <% if @checktimeout -%>
-checktimeout="<%= @checktimeout %>"
+checktimeout=<%= @checktimeout %>
 <% end -%>
 <% if @negotiatetimeout -%>
 negotiatetimeout=<%= @negotiatetimeout %>
@@ -21,19 +21,19 @@ failurecount=<%= @failurecount %>
 autoreload=<%= @autoreload %>
 <% end -%>
 <% if @callback -%>
-callback=<%= @callback %>
+callback="<%= @callback %>"
 <% end -%>
 <% if @fallback -%>
-fallback=<%= @fallback %>
+fallback="<%= @fallback %>"
 <% end -%>
 <% if @fallbackcommand -%>
-fallbackcommand=<%= @fallbackcommand %>
+fallbackcommand="<%= @fallbackcommand %>"
 <% end -%>
 <% if @logfile -%>
 logfile="<%= @logfile %>"
 <% end -%>
 <% if @emailalert -%>
-emailalert=<%= @emailalert %>
+emailalert="<%= @emailalert %>"
 <% end -%>
 <% if @emailalertfrom -%>
 emailalertfrom=<%= @emailalertfrom %>
@@ -45,7 +45,7 @@ emailalertfreq=<%= @emailalertfreq %>
 emailalertstatus=<%= @emailalertstatus %>
 <% end -%>
 <% if @smtp -%>
-smtp=<%= @smtp %>
+smtp="<%= @smtp %>"
 <% end -%>
 <% if @fork -%>
 fork=<%= @fork %>
@@ -63,7 +63,7 @@ maintenancedir=<%= @maintenancedir %>
 service=<%= @service %>
 <% end -%>
 <% if @checkcommand -%>
-checkcommand=<%= @checkcommand %>
+checkcommand="<%= @checkcommand %>"
 <% end -%>
 <% if @checkport -%>
 checkport=<%= @checkport %>
@@ -75,16 +75,16 @@ request="<%= @request %>"
 receive="<%= @receive %>"
 <% end -%>
 <% if @virtualhost -%>
-virtualhost=<%= @virtualhost %>
+virtualhost="<%= @virtualhost %>"
 <% end -%>
 <% if @login-%>
-login=<%= @login %>
+login="<%= @login %>"
 <% end -%>
 <% if @passwd-%>
-passwd=<%= @passwd %>
+passwd="<%= @passwd %>"
 <% end -%>
 <% if @database-%>
-database=<%= @database %>
+database="<%= @database %>"
 <% end -%>
 <% if @persistent-%>
 persistent=<%= @persistent %>

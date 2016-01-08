@@ -15,13 +15,13 @@ virtual=<%= @virtual %>
     failurecount=<%= @failurecount %>
 <% end -%>
 <% if @fallback -%>
-    fallback=<%= @fallback %>
+    fallback="<%= @fallback %>"
 <% end -%>
 <% if @fallbackcommand -%>
-    fallbackcommand=<%= @fallbackcommand %>
+    fallbackcommand="<%= @fallbackcommand %>"
 <% end -%>
 <% if @emailalert -%>
-    emailalert=<%= @emailalert %>
+    emailalert="<%= @emailalert %>"
 <% end -%>
 <% if @emailalertfreq -%>
     emailalertfreq=<%= @emailalertfreq %>
@@ -30,7 +30,7 @@ virtual=<%= @virtual %>
     emailalertstatus=<%= @emailalertstatus %>
 <% end -%>
 <% if @smtp -%>
-    smtp=<%= @smtp %>
+    smtp="<%= @smtp %>"
 <% end -%>
 <% if @quiescent -%>
     quiescent=<%= @quiescent %>
@@ -48,7 +48,7 @@ virtual=<%= @virtual %>
     service=<%= @service %>
 <% end -%>
 <% if @checkcommand -%>
-    checkcommand=<%= @checkcommand %>
+    checkcommand="<%= @checkcommand %>"
 <% end -%>
 <% if @checkport -%>
     checkport=<%= @checkport %>
@@ -63,16 +63,16 @@ virtual=<%= @virtual %>
     httpmethod=<%= @httpmethod %>
 <% end -%>
 <% if @virtualhost -%>
-    virtualhost=<%= @virtualhost %>
+    virtualhost="<%= @virtualhost %>"
 <% end -%>
 <% if @login-%>
-    login=<%= @login %>
+    login="<%= @login %>"
 <% end -%>
 <% if @passwd-%>
-    passwd=<%= @passwd %>
+    passwd="<%= @passwd %>"
 <% end -%>
 <% if @database-%>
-    database=<%= @database %>
+    database="<%= @database %>"
 <% end -%>
 <% if @scheduler-%>
     scheduler=<%= @scheduler %>
@@ -87,6 +87,6 @@ virtual=<%= @virtual %>
     protocol=<%= @protocol %>
 <% end -%>
 <% if @monitorfile -%>
-    monitorfile=<%= @monitorfile %>
+    monitorfile="<%= @monitorfile %>"
 <% end -%>
 
